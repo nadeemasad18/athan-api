@@ -76,10 +76,10 @@ function AthanSearch() {
        {data.today ?<p class ="hover:font-bold cursor-default">Sunrise: {data.today.Sunrise}</p> :null}
        {data.today ?<p class ="hover:font-bold cursor-default">Dhuhr: {data.today.Dhuhr}</p> :null}
        {data.today ?<p class ="hover:font-bold cursor-default">Asr: {data.today.Asr}</p> :null}
-       {data.today ?<p class ="hover:font-bold cursor-default">Maghrib: {data.today.Maghrib}</p> :null}
+       {data.today ?<p class ="hover:font-bold cursor-default">Maghrib:{data.today.Maghrib} </p> :null}
        {data.today ?<p class ="hover:font-bold cursor-default">Ishaa: {data.today["Isha'a" ] } </p> :null}
 
-
+       
        {/* <button onClick="" type="button" class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Prayer Times for current location</button> */}
 
     </div>

@@ -1,0 +1,37 @@
+{"title":"New York, NY, USA",
+"query":"new_york",
+"for":"daily",
+"method":4,
+"prayer_method_name":"Islamic Circle of North America",
+"daylight":"1",
+"timezone":"-5",
+"map_image":"https:\/\/maps.google.com\/maps\/api\/staticmap?center=40.712784,-74.005941&sensor=false&zoom=13&size=300x300",
+"sealevel":"2",
+
+"today_weather":{
+    "pressure":null,
+    "temperature":"32"
+    },
+    
+    "link":"http:\/\/muslimsalat.com\/new_york",
+    "qibla_direction":"58.51",
+    "latitude":"40.712784",
+    "longitude":"-74.005941",
+    "address":"New York, NY, USA",
+    "city":"New York",
+    "state":"New York",
+    "postal_code":"",
+    "country":"United States",
+    "country_code":"US",
+
+    "items":[
+        {"date_for":"2022-11-14",
+        "fajr":"6:22 am",
+        "shurooq":"7:37 am",
+        "dhuhr":"12:40 pm",
+        "asr":"3:18 pm",
+        "maghrib":"5:43 pm",
+        "isha":"6:57 pm"}
+        ],
+        
+        "status_valid":1,"status_code":1,"status_description":"Success."}
