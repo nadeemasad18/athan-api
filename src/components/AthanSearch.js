@@ -1,11 +1,17 @@
 import React, {useState} from 'react'
 import Axios from 'axios'
+import Afasi_Athan from '/Users/nadeemasad/Desktop/athan-api/src/audio/Afasi_Athan.mp3'
 
 function AthanSearch() {
     const [data,setData]= useState({})
     const [location,setLocation]=useState('')
-    // const [loading, setLoading] = useState(true) 
+    const [loading, setLoading] = useState('')
+    const [error, setError] = useState('')
+    const audio = new Audio(Afasi_Athan)
 
+
+
+    
     const url =`https://dailyprayer.abdulrcs.repl.co/api/${location}`
 
 
@@ -30,19 +36,49 @@ function AthanSearch() {
 
     
     }
+
+    const start = () => {
+      audio.play()
+    } 
+
+
+    // if (newDate.getHours() === data.today.Fajr || 
+    //   data.today.Sunrise || 
+    //   data.today.Dhuhr||
+    //   data.today.Asr||
+    //   data.today.Maghrib ||
+    //   data.today["Isha'a" ]){
+
+    //   audio.play()
+    // } 
+    
+
     
 
  
-    const searchLocation = (event) => {
-        if (event.key === 'Enter') {  
-          Axios.get(url).then((response) => {
-            setData(response.data) 
-            console.log(response.data)
-            setLocation('')
-          })
+    function searchLocation(event) {
+    if (event.key === 'Enter') {
+      setLoading("https://thumbs.gfycat.com/BlondNiceIbisbill-size_restricted.gif")
+      setData('')
+      Axios.get(url).then((response) => {
+        setLoading('')
+        setData(response.data)
+        console.log(response.data)
+        setLocation('')
+        // Axios.get(url).then((response) => {
+        //   setData(response.data) 
+        //   console.log(response.data)
+        //   setLocation('')
+      })
+
+
+    }
+  } if (!response.data){
+    setError("Unable to get Prayer Times for "+ location)
+  }
+
   
-        }
-      }
+      
 
   return (
     
@@ -64,14 +100,19 @@ function AthanSearch() {
 
 
     <div className="topx">
+      
        <p class ="font-bold">{(hours(new Date()))}</p>
        <p class ="font-bold">{data.city}</p>
        <p class ="font-bold">{month<10?`0 ${month}`:`${month}`}{'/'}{date}{'/'}{year}</p>
+       <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={start}>Play</button>
+
 
 
 
 
     </div>
+       {/* {data ? null : <p> Cannot Get Prayer Times </p> } */}
+       {loading ? <p>Getting prayer times for {location} <br/><br/> <img style={{width: 200, height: 200, position: 'relative', left: '42%'}} src={loading}/></p> : null}
        {data.today ?<p class ="hover:font-bold cursor-default">Fajr: {data.today.Fajr }</p> :null}
        {data.today ?<p class ="hover:font-bold cursor-default">Sunrise: {data.today.Sunrise}</p> :null}
        {data.today ?<p class ="hover:font-bold cursor-default">Dhuhr: {data.today.Dhuhr}</p> :null}
@@ -93,7 +134,9 @@ function AthanSearch() {
 
   )
   
+  
 }
+
 
 
 

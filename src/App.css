@@ -44,10 +44,12 @@ h1{
 
 p{
   text-align: center;
+ justify-content: center;
   color:white;
   font-size: 1.6rem;
   color:#fff;
   margin-top:20px;
+  position: relative;
 }
 
 
@@ -70,5 +72,11 @@ p{
   /* flex-direction:inline-flex; */
   justify-content:space-evenly;
   position:relative;
+}
+
+button{
+  display: flex;
+  text-align: center;
+ justify-content: center;
 }
 
